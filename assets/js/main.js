@@ -19,3 +19,20 @@ const relogio = setInterval(function time(){
     minutos.textContent = minuto;
     segundos.textContent = segundo;
 });
+function zoomLento(){
+    let imagem = document.getElementById("imagem");
+    for (let i = 100; i <= 130; i++){
+        setTimeout(function(){
+            zoom(imagem);
+        }, 100 * (i / 10))
+    }
+}
+
+function zoom(image){
+    let width = image.width + 1;
+    image.style.width = width + 'px';
+    image.style.height = 'auto';
+}
+
+
+zoomLento();
